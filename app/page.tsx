@@ -4,7 +4,7 @@ import HomeClient from './HomeClient';
 // 1. Fungsi pengambil data Profil dari MongoDB secara aman
   async function getProfile() {
     const baseUrl = process.env.NODE_ENV === 'production' 
-      ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}` 
+      ? (process.env.NEXT_PUBLIC_API_URL || "https://alyyusyawal.vercel.app")
       : "http://localhost:3000";
 
     try {

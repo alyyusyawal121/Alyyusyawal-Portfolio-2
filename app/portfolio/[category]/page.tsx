@@ -4,7 +4,7 @@ import CategoryClient from './CategoryClient';
 // 1. Fungsi pemanggil API
  async function getPortfolio() {
     const baseUrl = process.env.NODE_ENV === 'production' 
-      ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}` 
+      ? (process.env.NEXT_PUBLIC_API_URL || "https://alyyusyawal.vercel.app")
       : "http://localhost:3000";
 
     try {

@@ -4,7 +4,7 @@ import AboutClient from './AboutClient';
 // 1. Fungsi pengambil data Profil dari MongoDB (Server-Side)
   async function getProfile() {
     const baseUrl = process.env.NODE_ENV === 'production' 
-      ? `https://${process.env.NEXT_PUBLIC_API_URL}` 
+      ? (process.env.NEXT_PUBLIC_API_URL || "https://alyyusyawal.vercel.app")
       : "http://localhost:3000";
 
     try {
