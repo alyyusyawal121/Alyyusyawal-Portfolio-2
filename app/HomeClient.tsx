@@ -1,7 +1,7 @@
 "use client"; // Kunci utama agar Framer Motion bisa berjalan
 
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import { FaInstagram, FaGithub, FaLinkedin } from "react-icons/fa";
 
 export default function HomeClient({ profile }: { profile: any }) {
@@ -26,15 +26,20 @@ export default function HomeClient({ profile }: { profile: any }) {
     }
   };
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
+    const itemVariants: Variants = {
+    hidden: { 
+        opacity: 0, 
+        y: 30 
+    },
     visible: { 
-      opacity: 1, 
-      y: 0, 
-      transition: { duration: 0.7, ease: "easeOut" } 
+        opacity: 1, 
+        y: 0, 
+        transition: { 
+        duration: 0.7, 
+        ease: [0.22, 1, 0.36, 1] 
+        } 
     }
-  };
-
+    };
   return (
     <main className="min-h-screen bg-slate-50 dark:bg-[#1A1E2E] flex items-center justify-center py-24 px-6 md:px-12 transition-colors duration-300 relative overflow-hidden">
       
