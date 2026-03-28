@@ -3,19 +3,22 @@ import AboutClient from './AboutClient';
 
 // 1. Fungsi pengambil data Profil dari MongoDB (Server-Side)
 async function getProfile() {
-  try {
-    const baseUrl = process.env.NEXT_PUBLIC_API_URL || "";
-    const res = await fetch(`${baseUrl}/api/profile`, {
-      cache: 'no-store'
-    });
-    
-    if (!res.ok) return null;
-    const data = await res.json();
-    return data.profile;
-  } catch (error) {
-    console.error("Gagal mengambil profil:", error);
-    return null;
+  // 1. Trik untuk mendapatkan URL asli secara otomatis
+  const baseUrl = process.env.NEXT_PUBLIC_API_URL 
+    ? process.env.NEXT_PUBLIC_API_URL 
+    : process.env.VERCEL_URL 
+      ? `https://${process.env.VERCEL_URL}` 
+      : "";
+
+  // 2. Fetch menggunakan baseUrl yang sudah dipastikan lengkap
+  const res = await fetch(`${baseUrl}/api/portfolio`, {
+    cache: 'no-store'
+  });
+
+  if (!res.ok) {
+    throw new Error("Failed to take data from database");
   }
+  return res.json();
 }
 
 export default async function AboutPage() {

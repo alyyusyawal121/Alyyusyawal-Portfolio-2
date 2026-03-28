@@ -2,21 +2,23 @@ import React from 'react';
 import PortfolioClient from './PortfolioClient';
 
 // 1. Fungsi pengambil data yang aman (Server-Side)
-async function getPortfolio(){
-  try {
-    const baseUrl = process.env.NEXT_PUBLIC_API_URL || "";
-    const res = await fetch(`${baseUrl}/api/portfolio`,{
-      cache: 'no-store', // Selalu ambil data terbaru (dinamis)
-    });
-    
-    if(!res.ok){
-      return { portfolios: [] }; 
-    }
-    return res.json();
-  } catch (error) {
-    console.error("Gagal mengambil data database:", error);
-    return { portfolios: [] };
+async function getPortfolio() {
+  // 1. Trik untuk mendapatkan URL asli secara otomatis
+  const baseUrl = process.env.NEXT_PUBLIC_API_URL 
+    ? process.env.NEXT_PUBLIC_API_URL 
+    : process.env.VERCEL_URL 
+      ? `https://${process.env.VERCEL_URL}` 
+      : "";
+
+  // 2. Fetch menggunakan baseUrl yang sudah dipastikan lengkap
+  const res = await fetch(`${baseUrl}/api/portfolio`, {
+    cache: 'no-store'
+  });
+
+  if (!res.ok) {
+    throw new Error("Failed to take data from database");
   }
+  return res.json();
 }
 
 export default async function PortfolioPage() {
