@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import { FaFolderOpen, FaExclamationCircle } from "react-icons/fa"; 
 
 export default function PortfolioClient({ listPortfolio }: { listPortfolio: any[] }) {
@@ -47,14 +47,18 @@ export default function PortfolioClient({ listPortfolio }: { listPortfolio: any[
     }
   };
 
-  const cardVariants = {
-    hidden: { opacity: 0, y: 40 },
+    const cardVariants: Variants = {
+    hidden: { opacity: 0, y: 20 },
     visible: { 
-      opacity: 1, 
-      y: 0, 
-      transition: { type: "spring", stiffness: 100, damping: 12 } 
+        opacity: 1, 
+        y: 0, 
+        transition: { 
+        type: "spring", // Sekarang ini aman karena ada tipe Variants di atas
+        stiffness: 100, 
+        damping: 15 
+        } 
     }
-  };
+    };
 
   return (
     <main className="min-h-screen bg-slate-50 dark:bg-[#1A1E2E] transition-colors duration-300 px-6 pt-32 pb-24 md:px-16 flex flex-col items-center relative overflow-hidden">

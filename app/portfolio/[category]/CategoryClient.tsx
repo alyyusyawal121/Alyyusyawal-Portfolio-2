@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import { FaArrowLeft } from "react-icons/fa";
 
 export default function CategoryClient({ 
