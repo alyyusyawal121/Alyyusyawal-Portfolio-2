@@ -1,7 +1,7 @@
 "use client"; // Wajib karena animasi berjalan di sisi klien
 
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 
 export default function Loading() {
   // 1. Konfigurasi animasi untuk teks (Stagger effect yang lebih halus)
@@ -16,15 +16,15 @@ export default function Loading() {
     }
   };
 
-  const letterVariants = {
-    hidden: { opacity: 0, y: 20, filter: "blur(10px)" },
-    visible: { 
-      opacity: 1, 
-      y: 0, 
-      filter: "blur(0px)",
-      transition: { type: "spring", damping: 15, stiffness: 100 } 
-    }
-  };
+const letterVariants: Variants = { 
+  hidden: { opacity: 0, y: 50, filter: "blur(10px)" },
+  visible: { 
+    opacity: 1, 
+    y: 0, 
+    filter: "blur(0px)",
+    transition: { type: "spring", damping: 12, stiffness: 200 } 
+  }
+};
 
   // Menggunakan nama Anda alih-alih "AGENSIDIGITAL"
   const myName = "ALYYUSYAWAL".split("");
