@@ -27,14 +27,18 @@ export default function CategoryClient({
     }
   };
 
-  const cardVariants = {
-    hidden: { opacity: 0, y: 40 },
+    const cardVariants: Variants = {
+    hidden: { opacity: 0, y: 20 },
     visible: { 
-      opacity: 1, 
-      y: 0, 
-      transition: { type: "spring", stiffness: 100, damping: 12 } 
+        opacity: 1, 
+        y: 0, 
+        transition: { 
+        type: "spring", 
+        stiffness: 100, 
+        damping: 15 
+        } 
     }
-  };
+    };
 
   return (
     <main className="min-h-screen bg-slate-50 dark:bg-[#1A1E2E] transition-colors duration-300 px-6 py-32 md:px-16 flex flex-col items-center relative overflow-hidden">

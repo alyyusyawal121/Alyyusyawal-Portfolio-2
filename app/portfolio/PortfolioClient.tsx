@@ -53,7 +53,7 @@ export default function PortfolioClient({ listPortfolio }: { listPortfolio: any[
         opacity: 1, 
         y: 0, 
         transition: { 
-        type: "spring", // Sekarang ini aman karena ada tipe Variants di atas
+        type: "spring", 
         stiffness: 100, 
         damping: 15 
         } 
