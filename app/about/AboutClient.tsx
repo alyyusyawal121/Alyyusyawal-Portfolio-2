@@ -16,7 +16,7 @@ export default function AboutClient({ profile }: { profile: any }) {
     // Background menyesuaikan tema premium Dark Mode (#1A1E2E)
     <section className="min-h-screen bg-slate-50 dark:bg-[#1A1E2E] transition-colors duration-300 relative overflow-hidden">
       
-      {/* 🌟 Hiasan Background Glow 🌟 */}
+      {/*  Hiasan Background Glow  */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <motion.div 
           animate={{ scale: [1, 1.1, 1], opacity: [0.3, 0.5, 0.3] }}
@@ -39,7 +39,7 @@ export default function AboutClient({ profile }: { profile: any }) {
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
           
-          {/* 🌟 HEADER SECTION 🌟 */}
+          {/*  HEADER SECTION  */}
           <div className="mb-16 md:mb-24 text-center lg:text-left">
             <h1 className="text-4xl sm:text-5xl lg:text-[4rem] font-extrabold tracking-tight text-slate-900 dark:text-white drop-shadow-sm mb-6">
               About <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-400 dark:from-yellow-400 dark:to-yellow-200">Me</span>
@@ -50,7 +50,7 @@ export default function AboutClient({ profile }: { profile: any }) {
             </p>
           </div>
 
-          {/* 🌟 KONTEN UTAMA (Grid 2 Kolom) 🌟 */}
+          {/*  KONTEN UTAMA (Grid 2 Kolom)  */}
           <div className="grid gap-16 lg:grid-cols-[1.2fr_1fr] items-center mb-24">
             
             {/* KOLOM KIRI: Teks Deskripsi */}
@@ -77,7 +77,7 @@ export default function AboutClient({ profile }: { profile: any }) {
             
           </div>
 
-          {/* 🌟 BAGIAN TEKNOLOGI (Hanya Teks, Minimalis & Elegan) 🌟 */}
+          {/*  BAGIAN TEKNOLOGI (Hanya Teks, Minimalis & Elegan)  */}
           <div className="bg-white dark:bg-[#202538] rounded-[2.5rem] p-10 md:p-16 shadow-xl border border-slate-200 dark:border-slate-800/80 relative overflow-hidden">
             
             {/* Hiasan Sudut */}
