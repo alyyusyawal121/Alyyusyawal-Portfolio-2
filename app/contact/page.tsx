@@ -64,7 +64,7 @@ export default function ContactPage() {
     fetchProfile();
   }, []);
 
-  const emailUrl = profile?.emailUrl || "mailto:hello@alyyusyawal.com";
+  const emailUrl = profile?.emailUrl || "mailto:@alyyusyawal6.com";
   const linkedinUrl = profile?.linkedinUrl || "https://linkedin.com/in/alyyusyawal"; 
   const githubUrl = profile?.githubUrl || "";
   const discordUrl = profile?.discordUrl || "";

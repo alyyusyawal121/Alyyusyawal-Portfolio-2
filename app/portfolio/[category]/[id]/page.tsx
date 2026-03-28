@@ -4,7 +4,8 @@ import ProjectClient from './ProjectClient';
 // 1. Fungsi pengambil data yang aman
 async function getPortfolio() {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/portfolio`, {
+    const baseUrl = process.env.NEXT_PUBLIC_API_URL || "";
+    const res = await fetch(`${baseUrl}/api/portfolio`, {
       cache: 'no-store'
     });
     if(!res.ok) return { portfolios: [] };

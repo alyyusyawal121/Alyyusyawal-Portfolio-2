@@ -4,7 +4,8 @@ import HomeClient from './HomeClient';
 // 1. Fungsi pengambil data Profil dari MongoDB secara aman
 async function getProfile() {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/profile`, {
+    const baseUrl = process.env.NEXT_PUBLIC_API_URL || "";
+    const res = await fetch(`${baseUrl}/api/profile`, {
       cache: 'no-store'
     });
     if (!res.ok) return null;
